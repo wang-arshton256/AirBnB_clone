@@ -30,8 +30,8 @@ class Basemodel:
         
     def __str__(self):
         """Returns a string representation of the instanciated BaseModel"""
-        cls_name = self.__class__.__name
-        return "[{}] ({}) {}".format(cls_name, self.id, self.__dict__)
+        name_of_class = self.__class__.__name
+        return "[{}] ({}) {}".format(name_of_class, self.id, self.__dict__)
         
     def to_dict(self):
         """Returns a dictionary containing the values of the BaseModel"""
