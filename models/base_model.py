@@ -1,17 +1,19 @@
 #!/usr/bin/python3
-"""Model for Basemodel class"""
-import models
+"""BaseModel"""
 import uuid
-from datetime import datetime
-from . import storage
+import datetime
+from models import storage
 
 
-class Basemodel:
-    """The Basemodel class defines all common attributes for other classes"""
+class BaseModel():
+    """The BaseModel class defines all common 
+    attributes for other classes"""
     
     def __init__(self, *args, **kwargs):
-        """initializes and instance"""
-        if len(kwargs) >= 0:
+        """
+        initializes the BaseModel
+        """
+        if len(kwargs) > 0:
             for key, val in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     val = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
@@ -23,15 +25,15 @@ class Basemodel:
             self.updated_at = self.created_at.replace()
             storage.new(self)
             
-    def save(self):
-        """Updates the public instance attribute of updated_at"""
-        self.updated_at = updated_at.utcnow()
-        storage.save()
-        
     def __str__(self):
         """Returns a string representation of the instanciated BaseModel"""
         name_of_class = self.__class__.__name
         return "[{}] ({}) {}".format(name_of_class, self.id, self.__dict__)
+    
+    def save(self):
+        """Updates the public instance attribute of updated_at"""
+        self.updated_at = updated_at.utcnow()
+        storage.save()
         
     def to_dict(self):
         """Returns a dictionary containing the values of the BaseModel"""
