@@ -11,13 +11,7 @@ class HBNBCommand(cmd.Cmd):
     """Class for Command interpreter"""
     
     prompt = "(hbnb) "
-
-#   HELPCREATE    
-    def help_create(self):
-        print('\n'.join([
-            "Usage: create <class>" ,
-            "\n which creates a new <classname> instance\n"]))
-
+    
 #   DOCREATE        
     def do_create(self, arg: str):
         args = arg.split()
@@ -27,6 +21,12 @@ class HBNBCommand(cmd.Cmd):
         created_object = the_current_classes[args[0]]()
         created_object.save()
         print(created_object.id)
+
+#   HELPCREATE    
+    def help_create(self):
+        print('\n'.join([
+            "Usage: create <class>" ,
+            "\n which creates a new <classname> instance\n"]))
 
 #   HELPSHOW        
     def help_show(self):
