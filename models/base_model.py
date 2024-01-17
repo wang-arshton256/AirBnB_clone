@@ -23,7 +23,7 @@ class BaseModel():
             self.id = str(uuid4())
             self.created_at = datetime.utcnow()
             self.updated_at = self.created_at.replace()
-            .module.storage.new(self)
+            .models.storage.new(self)
             
     def __str__(self):
         """Returns a string representation of the instanciated BaseModel"""
@@ -33,7 +33,7 @@ class BaseModel():
     def save(self):
         """Updates the public instance attribute of updated_at"""
         self.updated_at = updated_at.utcnow()
-        .module.storage.save()
+        .models.storage.save()
         
     def to_dict(self):
         """Returns a dictionary containing the values of the BaseModel"""
