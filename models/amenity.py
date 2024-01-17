@@ -4,6 +4,8 @@ from .base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """a class amenity."""
+    """a class amenity.
+    Attr: name:
+    """
     
     name = ""
