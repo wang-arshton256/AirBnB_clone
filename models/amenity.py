@@ -3,6 +3,7 @@
 from .base_model import BaseModel
 
 
-class City(BaseModel):
-    """ a class City """
+class Amenity(BaseModel):
+    """a class amenity."""
     
+    name = ""
