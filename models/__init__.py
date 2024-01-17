@@ -1,7 +1,8 @@
 """
 Defines the FileStorage Instance
 """
-from models.engine import FiLe_Storage
+from models.engine.file_storage import FileStorage
 
-storage = FiLe_Storage.FileStorage()
+
+storage = FileStorage()
 storage.reload()
