@@ -1,8 +1,20 @@
-#!usr/bin/python3
-
-import cmd
+#!/usr/bin/env python3
+"""This module defines the console
+"""
+from models.base_model import BaseModel
 from models.base_model import BaseModel
 from models import storage
+import models
+import cmd
+from shlex import split
+from models.state import State
+from models.amenity import Amenity
+from models.user import User
+from models.city import City
+from models.place import Place
+from models.review import Review
+import json 
+
 
 the_current_classes = {"BaseModel": BaseModel}
 
